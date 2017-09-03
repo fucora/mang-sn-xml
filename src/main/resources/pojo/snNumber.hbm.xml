@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="mang.sn.entity.SnNumber" dynamic-insert="true" dynamic-update="true" table="sn_number">
+        <id name="id" type="string">
+            <column length="32" name="id" />
+            <generator class="uuid" />
+        </id>
+        <property name="snType" type="big_decimal">
+            <column length="2" name="sn_type" not-null="false" />
+        </property>
+        <property name="busType" type="string">
+            <column length="32" name="bus_type" not-null="false" />
+        </property>
+        <property name="maxindex" type="java.lang.Integer">
+            <column length="10" name="maxindex" not-null="false" />
+        </property>
+        <property name="numDate" type="timestamp">
+            <column name="num_date" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

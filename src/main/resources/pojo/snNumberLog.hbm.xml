@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="mang.sn.entity.SnNumberLog" dynamic-insert="true" dynamic-update="true" table="sn_number_log">
+        <id name="id" type="string">
+            <column length="32" name="id" />
+            <generator class="uuid" />
+        </id>
+        <property name="sn" type="string">
+            <column length="32" name="sn" not-null="false" />
+        </property>
+        <property name="rundate" type="timestamp">
+            <column name="rundate" not-null="false" />
+        </property>
+        <property name="ruid" type="string">
+            <column length="32" name="ruid" not-null="false" />
+        </property>
+        <property name="runame" type="string">
+            <column length="32" name="runame" not-null="false" />
+        </property>
+        <property name="prefix" type="string">
+            <column length="32" name="prefix" not-null="false" />
+        </property>
+        <property name="busType" type="string">
+            <column length="32" name="bus_type" not-null="false" />
+        </property>
+        <property name="snType" type="int">
+            <column length="2" name="sn_type" not-null="false" />
+        </property>
+        <property name="invokeCode" type="string">
+            <column length="1000" name="invoke_code" not-null="false" />
+        </property>
+        <property name="optionInfo" type="string">
+            <column length="32" name="option_info" not-null="false" />
+        </property>
+        <property name="runMemo" type="string">
+            <column length="32" name="run_memo" not-null="false" />
+        </property>
+        <property name="runtimeDuration" type="long">
+            <column length="10" name="runtime_duration" not-null="false" />
+        </property>
+        <property name="runtimeStart" type="timestamp">
+            <column name="runtime_start" not-null="false" />
+        </property>
+        <property name="runtimeEnd" type="timestamp">
+            <column name="runtime_end" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>
