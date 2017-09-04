@@ -17,10 +17,10 @@ public class App
     {
         System.out.println( "Hello World!" );
         
-        DOMConfigurator.configure(ClassLoader.getSystemResource("log4j.xml"));
+        DOMConfigurator.configure(ClassLoader.getSystemResource("conf/log4j.xml"));
         
         
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext-mysql.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/applicationContext-mysql.xml");
 //        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext-oracle.xml");
         
 //        TestSnService service=ctx.getBean(TestSnService.class);
