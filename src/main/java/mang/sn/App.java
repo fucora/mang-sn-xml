@@ -20,8 +20,8 @@ public class App
         DOMConfigurator.configure(ClassLoader.getSystemResource("conf/log4j.xml"));
         
         
-//        ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/applicationContext-mysql.xml");
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/applicationContext-oracle.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/applicationContext-mysql.xml");
+//        ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/applicationContext-oracle.xml");
         
 //        TestSnService service=ctx.getBean(TestSnService.class);
         TestSnService service=(TestSnService) ctx.getBean("testSnService");

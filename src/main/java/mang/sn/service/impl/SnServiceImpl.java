@@ -23,6 +23,7 @@ import mang.sn.tools.InvokeCode;
 import mang.sn.tools.SnType;
 import mang.sn.util.TimestampUtil;
 
+@Transactional(propagation=Propagation.REQUIRES_NEW)
 public class SnServiceImpl implements SnService {
 	private static Logger logger = Logger. getLogger(SnServiceImpl.class);
 	

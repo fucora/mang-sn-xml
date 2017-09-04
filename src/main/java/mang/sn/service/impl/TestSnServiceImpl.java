@@ -1,11 +1,14 @@
 package mang.sn.service.impl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import mang.sn.dao.SnNumberLogDAO;
 import mang.sn.entity.SnNumberLog;
 import mang.sn.service.SnService;
 import mang.sn.service.TestSnService;
 import mang.sn.tools.SnType;
 
+@Transactional
 public class TestSnServiceImpl implements TestSnService {
 	
 	private SnService snService;

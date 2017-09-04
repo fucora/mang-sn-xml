@@ -18,8 +18,15 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	
-	<!-- SnService 走单独事务 -->
 	
+	<!-- 
+	 --支持事务 @Transactional 标记
+	 --这样你可以直接在代码中使用注解  就不用自己的xml中配置事务
+	 -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/> 
+	
+	
+	<!-- 如下是用xml配置事务
 	 <aop:config>
         <aop:pointcut id="serviceMethod_sn" expression="execution(* mang.sn.service.SnService.*(..))"/>
         <aop:advisor pointcut-ref="serviceMethod_sn" advice-ref="txAdvice_sn"/>
@@ -30,7 +37,6 @@
         </tx:attributes>
     </tx:advice>
 	
-	<!-- 通过aop定义事务增强切面 -->
     <aop:config>
         <aop:pointcut id="serviceMethod" expression="execution(* mang.sn.service.*.*(..))"/>
         <aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice"/>
@@ -41,6 +47,7 @@
             <tx:method name="test*" propagation="REQUIRED"/> 
         </tx:attributes>
     </tx:advice>
+    -->
 	
 	<import resource="applicationContext-sn-mysql.xml"/>
 	
