@@ -7,7 +7,7 @@
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>mang-sn</name>
+	<name>mang-sn-xml</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -77,6 +77,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
+			<exclusions>
+                <exclusion>
+                    <artifactId>cglib</artifactId>
+                    <groupId>cglib</groupId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 
 		<dependency>
