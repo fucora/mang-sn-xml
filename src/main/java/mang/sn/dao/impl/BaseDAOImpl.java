@@ -34,7 +34,8 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 //	}
 
 	public T saveOrUpdate(T entity) {
-		this.getSessionFactory().getCurrentSession().saveOrUpdate(entity);
+//		this.getSessionFactory().getCurrentSession().saveOrUpdate(entity);
+		this.getSession().saveOrUpdate(entity);
 		return entity;
 	}
 
@@ -78,7 +79,8 @@ public class BaseDAOImpl<T> extends HibernateDaoSupport implements BaseDAO<T> {
 
 	@Override
 	public T delete(T entity) {
-		this.getSessionFactory().getCurrentSession().delete(entity);
+//		this.getSessionFactory().getCurrentSession().delete(entity);
+		this.getSession().delete(entity);
 		return entity;
 	}
 

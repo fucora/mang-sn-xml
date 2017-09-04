@@ -16,7 +16,8 @@ public class TestSnServiceImpl implements TestSnService {
 	public void testTransaction() {
 		SnNumberLog snLog1=new SnNumberLog();
 		snLog1.setRunMemo("取单号前");
-		snNumberLogDAO.save(snLog1);
+//		snNumberLogDAO.save(snLog1);
+		snNumberLogDAO.saveOrUpdate(snLog1);
 		
 		String sn=snService.doGetDayDateSn("QC", "Test");
 		System.out.println(sn);
