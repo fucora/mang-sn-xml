@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
-import org.springframework.stereotype.Repository;
 
 import mang.sn.dao.SnNumberDAO;
 import mang.sn.entity.SnNumber;
@@ -64,7 +63,7 @@ public class SnNumberDAOImplOracle  extends BaseDAOImpl<SnNumber> implements SnN
 		query.setString("busType", busType);
 		query.setInteger("snType", snType);
 //		query.setLockOptions();
-		query.setLockMode("SnNumber", LockMode.UPGRADE);
+		query.setLockMode("t", LockMode.UPGRADE);
 		List lis=query.list();
 		if(lis.size()>0){
 		 SnNumber snNumber=(SnNumber) lis.get(0);

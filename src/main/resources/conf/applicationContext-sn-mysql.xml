@@ -48,19 +48,6 @@
 		<property name="snService" ref="snService" />
 		<property name="snNumberLogDAO" ref="snNumberLogDAO" />
 	</bean>
-	
-	
-	
-	<!-- oracle配置 
-	<bean id="timeDAO" class="mang.sn.dao.impl.TimeDAOImplOracle" />
-
-	<bean id="snService" class="mang.sn.service.impl.SnServiceImpl">
-		<property name="snNumberDAO" ref="snNumberDAOImplOracle" />
-		<property name="timeDAO" ref="timeDAO" />
-	</bean>
-	-->
-	
-	
 
 
 </beans>

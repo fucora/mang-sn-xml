@@ -14,11 +14,7 @@
     http://www.springframework.org/schema/mvc      
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- 支持注解 -->
-
-	<!--自动装配DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter -->
 	
-	<context:component-scan base-package="mang.sn"/>
 
 	<!-- 扫描路由路径 -->
 
@@ -38,15 +34,17 @@
 	</bean>
 	
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan">  
-            <value>mang.sn.entity</value>  
-        </property>  
+		<property name="mappingLocations">
+			<list>
+				<value>conf/pojo/*.xml</value>
+			</list>
+		</property>	
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.format_sql">false</prop>
 				<prop key="hibernate.use_sql_comments">false</prop>
 			</props>
@@ -55,18 +53,17 @@
 	
 	<!-- 事务管理器 -->
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 		<property name="dataSource" > 
 			<ref bean="dataSource" />
 		</property>
-	</bean>
-	
+	</bean>	
 	
 	<!-- 支持事务 @Transactional 标记 -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	
-	  
+	<import resource="applicationContext-tx.xml"/>
 	<import resource="applicationContext-sn-oracle.xml"/>
 	
 </beans>
