@@ -14,8 +14,8 @@ CREATE TABLE sn_number_log
   option_info   VARCHAR(32) COMMENT '备注如精度等',
   run_memo      VARCHAR(32) COMMENT '运行备注',
   runtime_duration DECIMAL COMMENT '运行时长单位毫秒',
-  runtime_start TIMESTAMP(6) COMMENT '运行开始时间精确到毫秒',
-  runtime_end   TIMESTAMP(6) COMMENT '运行结束时间精确到毫秒'
+  runtime_start DATETIME(6) COMMENT '运行开始时间精确到毫秒',
+  runtime_end   DATETIME(6) COMMENT '运行结束时间精确到毫秒'
 ) COMMENT '单号生成日志表'
 ;
 

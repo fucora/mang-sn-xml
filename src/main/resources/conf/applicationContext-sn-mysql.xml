@@ -42,6 +42,7 @@
 		<property name="snNumberDAO" ref="snNumberDAOImplMysql" />
 		<property name="snNumberLogDAO" ref="snNumberLogDAO" />
 		<property name="timeDAO" ref="timeDAO" />
+		<property name="invodeCode" ref="sn-invokeCode" />
 	</bean>
 	
 	<bean id="testSnService" class="mang.sn.service.impl.TestSnServiceImpl">
