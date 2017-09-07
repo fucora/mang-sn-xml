@@ -25,8 +25,8 @@ public class App
         
 //        TestSnService service=ctx.getBean(TestSnService.class);
         TestSnService service=(TestSnService) ctx.getBean("testSnService");
-        service.testTransaction();
-//          service.testDateSn();
+//        service.testTransaction();
+          service.testDateSn();
 //        service.testYearSn();
 //        service.testMonthSn();
 //        service.testWeekSn();

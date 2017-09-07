@@ -20,8 +20,8 @@
 	
 	
 	<!-- 
-	 --支持事务 @Transactional 标记
-	 --这样你可以直接在代码中使用注解  就不用自己的xml中配置事务
+	 支持事务 @Transactional 标记
+	 这样你可以直接在代码中使用注解  就不用自己的xml中配置事务
 	 -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/> 
 	

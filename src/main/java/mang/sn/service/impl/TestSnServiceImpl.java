@@ -4,6 +4,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import mang.sn.dao.SnNumberLogDAO;
 import mang.sn.entity.SnNumberLog;
+import mang.sn.generate.DayNumberGenerateServerDate;
+import mang.sn.generate.DayNumberGenerate;
+import mang.sn.generate.DayFormatNumberGenerate;
+import mang.sn.generate.NumberGenerate;
 import mang.sn.service.SnService;
 import mang.sn.service.TestSnService;
 import mang.sn.tools.SnType;
@@ -52,7 +56,8 @@ public class TestSnServiceImpl implements TestSnService {
 
 	@Override
 	public void testDateSn() {
-		String sn=snService.doGetSn("QC", "test", SnType.dayDate, null);
+//		String sn=snService.doGetSn("QC", "test", SnType.dayDate, null);
+		String sn=snService.doGetSn("QC", "test", SnType.dayDate, new DayFormatNumberGenerate());
 		System.out.println(sn);
 	}
 

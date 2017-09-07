@@ -6,9 +6,6 @@ import java.util.Map;
 
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +13,7 @@ import mang.sn.dao.SnNumberDAO;
 import mang.sn.dao.SnNumberLogDAO;
 import mang.sn.dao.TimeDAO;
 import mang.sn.entity.SnNumberLog;
-import mang.sn.generate.DayDateGenerate;
+import mang.sn.generate.DayNumberGenerate;
 import mang.sn.generate.SnGenerate;
 import mang.sn.service.SnService;
 import mang.sn.tools.InvokeCode;
@@ -42,7 +39,7 @@ public class SnServiceImpl implements SnService {
 	//原因：如果人调用者走一个事务 如果调用者的事务一直不结束 你就不能提交 则别人再调该方法就阻塞了
 	@Override
 	public String doGetDayDateSn(String prefix, String type) {
-		String code = doGetSn(prefix, type, SnType.dayDate, new DayDateGenerate());
+		String code = doGetSn(prefix, type, SnType.dayDate, new DayNumberGenerate());
 		return code;
 	}
 
@@ -111,7 +108,7 @@ public class SnServiceImpl implements SnService {
 		
 		if(snGenerate==null){
 			logger.info("[生成单号]生成类snGenerate为空 这里采用默认的生成类");
-			snGenerate=new DayDateGenerate();
+			snGenerate=new DayNumberGenerate();
 		}
 		
 		code=snGenerate.generateSn(prefix, maxIndex, paraMap);
