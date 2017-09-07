@@ -49,6 +49,4 @@
     </tx:advice>
     -->
 	
-	<import resource="applicationContext-sn-mysql.xml"/>
-	
 </beans>
